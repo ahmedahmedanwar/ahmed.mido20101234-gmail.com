@@ -78,12 +78,50 @@
                     </view>
                     <navigationItem key="navigationItem" title="Videos List" id="dDP-JC-tOR"/>
                     <connections>
-                        <segue destination="ZgB-yy-7md" kind="show" identifier="toVideo" id="Bba-qH-lds"/>
+                        <segue destination="VDj-z5-bi3" kind="show" identifier="toVideo" id="cTU-OT-7s7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746" y="151"/>
+            <point key="canvasLocation" x="881" y="150"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gmi-y2-uKd">
+            <objects>
+                <viewController id="VDj-z5-bi3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OyT-Cm-70u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ytn-fc-FfF">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="136" id="pZL-Zd-2ip">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="136"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pZL-Zd-2ip" id="4it-bE-MJt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="136"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ytn-fc-FfF" firstAttribute="leading" secondItem="swE-aW-gqK" secondAttribute="leading" id="6X8-0y-Hct"/>
+                            <constraint firstItem="ytn-fc-FfF" firstAttribute="top" secondItem="swE-aW-gqK" secondAttribute="top" id="CNJ-aP-Dtp"/>
+                            <constraint firstItem="ytn-fc-FfF" firstAttribute="bottom" secondItem="swE-aW-gqK" secondAttribute="bottom" id="Cpv-Fh-Y66"/>
+                            <constraint firstItem="ytn-fc-FfF" firstAttribute="trailing" secondItem="swE-aW-gqK" secondAttribute="trailing" id="gis-qd-K5u"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="swE-aW-gqK"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="I1D-sk-A3y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N05-D9-bIP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1698" y="177"/>
         </scene>
         <!--Video View Controller-->
         <scene sceneID="JZX-HY-txA">
@@ -94,14 +132,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s92-qk-nhb">
-                                <rect key="frame" x="0.0" y="44" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="T7b-rD-ntY"/>
                                 </constraints>
                             </webView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n91-RD-Swd">
-                                <rect key="frame" x="5" y="249" width="365" height="30"/>
+                                <rect key="frame" x="5" y="205" width="365" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="oMU-oU-Y27"/>
                                 </constraints>
@@ -129,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYR-9A-Ulg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1596" y="142"/>
+            <point key="canvasLocation" x="2428" y="166"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WCs-Kd-QOw">
