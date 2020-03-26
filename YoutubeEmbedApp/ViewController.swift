@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
     var videos:[Video] = []
     var video:Video = Video()
+    let API_KEY = "AIzaSyBIOWykpurpY1Y3sMQ-18Aix8ABdu6PqWk"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        request()
         
         let video = Video()
             video.Key = "WEzVpZXyTZ0"
@@ -95,6 +98,41 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             
         }
         
+    }
+    
+    func request(){
+        
+        let url = "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=5&key=\(API_KEY)"
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse) in
+            switch(response.result) {
+            case .success(let value):
+                print(value)
+                let temp = response.response?.statusCode ?? 400
+                print(temp)
+                if temp >= 300 {
+                    do {
+                        let err = try JSONDecoder().decode(ErrorHandler.self, from: response.data!)
+                        print(err.message ?? "")
+                        print(temp)
+                    }catch{
+                        print("errorrrrelse")
+                    }
+                }else{
+                    do {
+                        let welcome = try JSONDecoder().decode(Welcome.self, from: response.data!)
+                        print(welcome)
+                    }catch{
+                        print (error)
+                        print("errorrrr catcchhchchchc")
+                    }
+                }
+            case .failure(_):
+                let lockString = NSLocalizedString("Something went wrong please try again later", comment: "حدث خطأ برجاء اعادة المحاولة")
+                print(lockString)
+                break
+            }
+        }
     }
     
 }
