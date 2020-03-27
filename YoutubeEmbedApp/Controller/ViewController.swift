@@ -10,19 +10,24 @@ import UIKit
 import Alamofire
 
 class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-
+    
     var videos:[Video] = []
     var video:Video = Video()
+    var videoArray = [Video]()
     let API_KEY = "AIzaSyBIOWykpurpY1Y3sMQ-18Aix8ABdu6PqWk"
+    let CHANNEL_ID = "UCGIY_O-8vW4rfX98KlMkvRg"
+         
+    let apiData  = Welcome()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         request()
         
-            
+        
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return videos.count
     }
@@ -31,18 +36,19 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! VideoTableViewCell
         
-        cell.videoTitle.text = videos[indexPath.row].Title
-        let url = "https://img.youtube.com/vi/\(videos[indexPath.row].Key)/0.jpg"
-        cell.videoImage.downloaded(from: url)
+        //        cell.videoTitle.text = videos[indexPath.row].Title
+        //        let url = "https://img.youtube.com/vi/\(videos[indexPath.row].Key)/0.jpg"
+        //        cell.videoImage.downloaded(from: url)
+        
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let vi = videos[indexPath.row]
-        self.video = vi
-        
+//        let vi = videos[indexPath.row]
+//        self.video = vi
+//
         performSegue(withIdentifier: "toVideo", sender: nil)
         
     }
@@ -52,7 +58,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         if segue.identifier == "toVideo" {
             
             let vc = segue.destination as! VideoViewController
-            vc.video = self.video
+           vc.video = self.video
             
         }
         
@@ -62,8 +68,9 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         
         let url = "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=5&key=\(API_KEY)"
         
-        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse) in
+        Alamofire.request(url, method: .get, parameters: ["part":"snippet","channelId": CHANNEL_ID ], encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse) in
             switch(response.result) {
+            //    var arrayOfVideos = [Video]()
             case .success(let value):
                 print(value)
                 let temp = response.response?.statusCode ?? 400
@@ -80,6 +87,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
                     do {
                         let welcome = try JSONDecoder().decode(Welcome.self, from: response.data!)
                         print(welcome)
+                    
+                        
                     }catch{
                         print (error)
                         print("errorrrr catcchhchchchc")
@@ -108,7 +117,7 @@ extension UIImageView {
             DispatchQueue.main.async() {
                 self.image = image
             }
-            }.resume()
+        }.resume()
     }
     func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         guard let url = URL(string: link) else { return }

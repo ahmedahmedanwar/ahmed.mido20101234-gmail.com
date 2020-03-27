@@ -80,16 +80,14 @@
 				E20364F1242CEA5900E12F5D /* Utilities */,
 				E2F221F0242C06A6007677DB /* Services */,
 				04F3B48C21E283CD00327D7F /* AppDelegate.swift */,
-				E2FCC071242DA0080048FA8A /* ChannelVideoModel.swift */,
-				04F3B48E21E283CD00327D7F /* ViewController.swift */,
-				3BC3AB97242D58CC006A9A9E /* ErrorHandling.swift */,
 				3BC3AB95242D56FD006A9A9E /* Model.swift */,
-				E20364F7242CFDD600E12F5D /* New Group */,
+				E2FCC071242DA0080048FA8A /* ChannelVideoModel.swift */,
+				E2FCC075242DA0ED0048FA8A /* Controller */,
+				E20364F7242CFDD600E12F5D /* Cells */,
 				04F3B49021E283CD00327D7F /* Main.storyboard */,
 				04F3B49321E283CF00327D7F /* Assets.xcassets */,
 				04F3B49521E283CF00327D7F /* LaunchScreen.storyboard */,
 				04F3B49821E283CF00327D7F /* Info.plist */,
-				04F3B4A021E2899D00327D7F /* VideoViewController.swift */,
 				E2FCC073242DA0700048FA8A /* CommentsFile.swift */,
 			);
 			path = YoutubeEmbedApp;
@@ -120,20 +118,30 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		E20364F7242CFDD600E12F5D /* New Group */ = {
+		E20364F7242CFDD600E12F5D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				04F3B49E21E2844200327D7F /* VideoTableViewCell.swift */,
 				E20364F8242CFE3E00E12F5D /* ChannelVideosTableViewCell.swift */,
 			);
-			path = "New Group";
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		E2F221F0242C06A6007677DB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3BC3AB97242D58CC006A9A9E /* ErrorHandling.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		E2FCC075242DA0ED0048FA8A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04F3B48E21E283CD00327D7F /* ViewController.swift */,
+				04F3B4A021E2899D00327D7F /* VideoViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
