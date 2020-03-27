@@ -18,6 +18,8 @@
 		3BC3AB98242D58CC006A9A9E /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC3AB97242D58CC006A9A9E /* ErrorHandling.swift */; };
 		E20364F3242CEAA000E12F5D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20364F2242CEAA000E12F5D /* Constant.swift */; };
 		E20364F9242CFE3E00E12F5D /* ChannelVideosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20364F8242CFE3E00E12F5D /* ChannelVideosTableViewCell.swift */; };
+		E2FCC072242DA0080048FA8A /* ChannelVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FCC071242DA0080048FA8A /* ChannelVideoModel.swift */; };
+		E2FCC074242DA0700048FA8A /* CommentsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FCC073242DA0700048FA8A /* CommentsFile.swift */; };
 		ED88709586A5D0983F11358D /* Pods_YoutubeEmbedApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DADBE6CF698EEB6782525B5 /* Pods_YoutubeEmbedApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,8 @@
 		87DAF110C919AF0D87481BCA /* Pods-YoutubeEmbedApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeEmbedApp.debug.xcconfig"; path = "Target Support Files/Pods-YoutubeEmbedApp/Pods-YoutubeEmbedApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E20364F2242CEAA000E12F5D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E20364F8242CFE3E00E12F5D /* ChannelVideosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVideosTableViewCell.swift; sourceTree = "<group>"; };
+		E2FCC071242DA0080048FA8A /* ChannelVideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVideoModel.swift; sourceTree = "<group>"; };
+		E2FCC073242DA0700048FA8A /* CommentsFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 				E20364F1242CEA5900E12F5D /* Utilities */,
 				E2F221F0242C06A6007677DB /* Services */,
 				04F3B48C21E283CD00327D7F /* AppDelegate.swift */,
+				E2FCC071242DA0080048FA8A /* ChannelVideoModel.swift */,
 				04F3B48E21E283CD00327D7F /* ViewController.swift */,
 				3BC3AB97242D58CC006A9A9E /* ErrorHandling.swift */,
 				3BC3AB95242D56FD006A9A9E /* Model.swift */,
@@ -85,6 +90,7 @@
 				04F3B49521E283CF00327D7F /* LaunchScreen.storyboard */,
 				04F3B49821E283CF00327D7F /* Info.plist */,
 				04F3B4A021E2899D00327D7F /* VideoViewController.swift */,
+				E2FCC073242DA0700048FA8A /* CommentsFile.swift */,
 			);
 			path = YoutubeEmbedApp;
 			sourceTree = "<group>";
@@ -246,10 +252,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BC3AB96242D56FD006A9A9E /* Model.swift in Sources */,
+				E2FCC074242DA0700048FA8A /* CommentsFile.swift in Sources */,
 				04F3B48F21E283CD00327D7F /* ViewController.swift in Sources */,
 				04F3B48D21E283CD00327D7F /* AppDelegate.swift in Sources */,
 				E20364F3242CEAA000E12F5D /* Constant.swift in Sources */,
 				04F3B4A121E2899D00327D7F /* VideoViewController.swift in Sources */,
+				E2FCC072242DA0080048FA8A /* ChannelVideoModel.swift in Sources */,
 				3BC3AB98242D58CC006A9A9E /* ErrorHandling.swift in Sources */,
 				E20364F9242CFE3E00E12F5D /* ChannelVideosTableViewCell.swift in Sources */,
 				04F3B49F21E2844200327D7F /* VideoTableViewCell.swift in Sources */,
