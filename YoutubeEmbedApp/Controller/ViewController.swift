@@ -66,13 +66,14 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
                 VideosListChanViewController{
             
                 
-                navigationController?.pushViewController(viewController, animated: true)
+                self.navigationController?.pushViewController(viewController, animated: true)
+                
                 
             }
-            
-            //code for move next VC
-                 let secondVC = storyboard?.instantiateViewController(withIdentifier: "videosList") as! VideosListChanViewController
-                         self.navigationController?.pushViewController(secondVC, animated: true)
+//
+//            //code for move next VC
+//                 let secondVC = storyboard?.instantiateViewController(withIdentifier: "videosList") as! VideosListChanViewController
+//                         self.navigationController?.pushViewController(secondVC, animated: true)
 
 }
 }
