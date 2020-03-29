@@ -50,6 +50,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! VideoTableViewCell
             cell.videoImage.sd_setImage(with: URL(string: youtubeModel?.items[indexPath.row].snippet.thumbnails.medium.url ?? ""), placeholderImage: UIImage(named: "appIcon1"))
+            cell.videoTitle.text = youtubeModel?.items[indexPath.row].snippet.channelTitle
             return cell
         }
         
