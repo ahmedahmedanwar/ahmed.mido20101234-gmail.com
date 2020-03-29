@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SDWebImage
 
+@available(iOS 13.0, *)
 class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
@@ -55,73 +56,94 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         }
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        }
-        
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        }
-        /*
-        func request(){
             
-            let url = "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=5&key=\(API_KEY)"
+            print("You selected cell #\(indexPath.row)!")
+
+            let selectedVideo = youtubeModel?.items[indexPath.row].snippet.channelID
+            let indexPath = tableView.indexPathForSelectedRow
+
+            if let viewController = storyboard?.instantiateViewController(identifier: "videosList") as?
+                VideosListChanViewController{
             
-            Alamofire.request(url, method: .get, parameters: ["part":"snippet","channelId": CHANNEL_ID ], encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse) in
-                switch(response.result) {
-                //    var arrayOfVideos = [Video]()
-                case .success(let value):
-                    print("dahjkl;")
-                    print(value)
-                    let temp = response.response?.statusCode ?? 400
-                    print(temp)
-                    if temp >= 300 {
-                        do {
-                            let err = try JSONDecoder().decode(ErrorHandler.self, from: response.data!)
-                            print(err.message ?? "")
-                            print(temp)
-                        }catch{
-                            print("errorrrrelse")
-                        }
-                    }else{
-                        do {
-                            let welcome = try JSONDecoder().decode(Welcome.self, from: response.data!)
-                            print(welcome)
-                        
-                            
-                        }catch{
-                            print (error)
-                            print("errorrrr catcchhchchchc")
-                        }
-                    }
-                case .failure(_):
-                    let lockString = NSLocalizedString("Something went wrong please try again later", comment: "حدث خطأ برجاء اعادة المحاولة")
-                    print(lockString)
-                    break
-                }
+                
+                navigationController?.pushViewController(viewController, animated: true)
+                
             }
-        }
-     */
-        
-    }
+            
+            //code for move next VC
+                 let secondVC = storyboard?.instantiateViewController(withIdentifier: "videosList") as! VideosListChanViewController
+                         self.navigationController?.pushViewController(secondVC, animated: true)
 
-    extension UIImageView {
-        func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
-            contentMode = mode
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                guard
-                    let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                    let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                    let data = data, error == nil,
-                    let image = UIImage(data: data)
-                    else { return }
-                DispatchQueue.main.async() {
-                    self.image = image
-                }
-            }.resume()
-        }
-        func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
-            guard let url = URL(string: link) else { return }
-            downloaded(from: url, contentMode: mode)
-        }
-        
-        
-    }
+}
+}
 
+//        }
+//
+//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        }
+//        /*
+//        func request(){
+//
+//            let url = "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=5&key=\(API_KEY)"
+//
+//            Alamofire.request(url, method: .get, parameters: ["part":"snippet","channelId": CHANNEL_ID ], encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse) in
+//                switch(response.result) {
+//                //    var arrayOfVideos = [Video]()
+//                case .success(let value):
+//                    print("dahjkl;")
+//                    print(value)
+//                    let temp = response.response?.statusCode ?? 400
+//                    print(temp)
+//                    if temp >= 300 {
+//                        do {
+//                            let err = try JSONDecoder().decode(ErrorHandler.self, from: response.data!)
+//                            print(err.message ?? "")
+//                            print(temp)
+//                        }catch{
+//                            print("errorrrrelse")
+//                        }
+//                    }else{
+//                        do {
+//                            let welcome = try JSONDecoder().decode(Welcome.self, from: response.data!)
+//                            print(welcome)
+//
+//
+//                        }catch{
+//                            print (error)
+//                            print("errorrrr catcchhchchchc")
+//                        }
+//                    }
+//                case .failure(_):
+//                    let lockString = NSLocalizedString("Something went wrong please try again later", comment: "حدث خطأ برجاء اعادة المحاولة")
+//                    print(lockString)
+//                    break
+//                }
+//            }
+//        }
+//     */
+//
+//    }
+
+//    extension UIImageView {
+//        func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
+//            contentMode = mode
+//            URLSession.shared.dataTask(with: url) { data, response, error in
+//                guard
+//                    let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+//                    let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+//                    let data = data, error == nil,
+//                    let image = UIImage(data: data)
+//                    else { return }
+//                DispatchQueue.main.async() {
+//                    self.image = image
+//                }
+//            }.resume()
+//        }
+//        func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
+//            guard let url = URL(string: link) else { return }
+//            downloaded(from: url, contentMode: mode)
+//        }
+//
+//
+//    }
+//
