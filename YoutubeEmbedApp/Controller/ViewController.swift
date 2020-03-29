@@ -19,9 +19,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         let API_KEY = "AIzaSyBIOWykpurpY1Y3sMQ-18Aix8ABdu6PqWk"
         let CHANNEL_ID = "UCGIY_O-8vW4rfX98KlMkvRg"
         var youtubeModel : YoutubeModel?
-     //   var apiData : Welcome?
         
-        
+        // Edit
         
         override func viewDidLoad() {
             super.viewDidLoad()
