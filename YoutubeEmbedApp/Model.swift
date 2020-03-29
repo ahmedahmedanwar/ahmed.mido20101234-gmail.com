@@ -8,6 +8,7 @@
 
 import Foundation
 
+/*
 struct Welcome: Decodable {
     let kind, etag, nextPageToken: String
     let pageInfo: PageInfo
@@ -65,3 +66,4 @@ struct Default: Decodable {
 struct PageInfo: Decodable {
     let totalResults, resultsPerPage: Int
 }
+*/

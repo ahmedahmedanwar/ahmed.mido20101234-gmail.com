@@ -7,8 +7,7 @@ target 'YoutubeEmbedApp' do
 
   # Pods for YoutubeEmbedApp
 
-pod 'Alamofire'
+  pod 'Alamofire'
 
-pod 'Kingfisher'
-
+   pod 'SDWebImage'
 end
